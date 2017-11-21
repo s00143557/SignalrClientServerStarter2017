@@ -43,7 +43,9 @@ namespace MonoGameClient
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            serverConnection = new HubConnection("http://localhost:3566/");
+            //Azure end point: http://pdpwtestgameserver1.azurewebsites.net/
+            serverConnection = new HubConnection("http://pdpwtestgameserver1.azurewebsites.net/");
+            //serverConnection = new HubConnection("http://localhost:3566/");
             serverConnection.StateChanged += ServerConnection_StateChanged;
             proxy = serverConnection.CreateHubProxy("GameHub");
             connectionMessage = string.Empty;
